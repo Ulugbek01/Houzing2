@@ -12,32 +12,32 @@ const Filter = () => {
         <PopoverWrapper.Address>
             <h3 className="filter-title">Address</h3>
             <Address>
-                <Input width={200} mr={20} type={'primary'} placeholder={'Country'}/>
-                <Input width={200} mr={20} type={'primary'} placeholder={'Region'}/>
-                <Input width={200} mr={20} type={'primary'} placeholder={'City'}/>
-                <Input width={200} type={'primary'} placeholder={'Zip code'}/>
+                <Input width={200} mr={20} pl={16} type={'primary'} placeholder={'Country'}/>
+                <Input width={200} mr={20} pl={16} type={'primary'} placeholder={'Region'}/>
+                <Input width={200} mr={20} pl={16} type={'primary'} placeholder={'City'}/>
+                <Input width={200} pl={16} type={'primary'} placeholder={'Zip code'}/>
             </Address>
         </PopoverWrapper.Address>
 
         <PopoverWrapper.ApartmentInfo>
             <h3 className="filter-title">Apartment info</h3>
             <ApartmentInfo>
-                <Input width={200} mr={20} type={'primary'} placeholder={'Rooms'}/>
-                <Input width={200} mr={20} type={'primary'} placeholder={'Size'}/>
-                <Input width={200} type={'primary'} placeholder={'Sort'}/>
+                <Input width={200} mr={20} pl={16} type={'primary'} placeholder={'Rooms'}/>
+                <Input width={200} mr={20} pl={16} type={'primary'} placeholder={'Size'}/>
+                <Input width={200} pl={16} type={'primary'} placeholder={'Sort'}/>
             </ApartmentInfo>
         </PopoverWrapper.ApartmentInfo>
 
         <PopoverWrapper.Price>
              <h3 className="filter-title">Price</h3>
             <Price>
-                <Input width={200} mr={20} type={'primary'} placeholder={'Min price'}/>
-                <Input width={200} type={'primary'} placeholder={'Max price'}/>
+                <Input width={200} mr={20} pl={16} type={'primary'} placeholder={'Min price'}/>
+                <Input width={200} pl={16} type={'primary'} placeholder={'Max price'}/>
             </Price>
         </PopoverWrapper.Price>
 
         <PopoverWrapper.Footer>
-            <Button width={128}>Cencel</Button>
+            <Button width={128} mr={20}>Cencel</Button>
             <Button width={128} type={'primary'}>Submit</Button>
         </PopoverWrapper.Footer>
     </PopoverWrapper>

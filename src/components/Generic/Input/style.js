@@ -14,6 +14,7 @@ const getType = (type) => {
 			}
 	}
 }
+
 export const Wrapper = styled.div`
 	position: relative;
 	flex: ${({isIcon}) => isIcon ? 1 : 0};
@@ -30,7 +31,7 @@ export const Container = styled.input`
 	padding-top: ${({pt}) => pt ? `${pt}px` : ''};
 	padding-right: ${({pr}) => pr ? `${pr}px` : ''};
 	padding-bottom: ${({pb}) => pb ? `${pb}px` : ''};
-	padding-left: ${({pl}) => pl ? `${pl}px` : '16px'};
+	padding-left: ${({pl}) => pl ? `${pl}px` : ''};
 	padding: ${({py}) => py ? `${py}px` : ''} '';
 	font-family: 'Montserrat', sans-serif;
 	outline: none;
