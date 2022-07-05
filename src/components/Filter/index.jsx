@@ -35,7 +35,7 @@ const Filter = () => {
                 <Input width={200} pl={16} type={'primary'} placeholder={'Max price'}/>
             </Price>
         </PopoverWrapper.Price>
-
+        
         <PopoverWrapper.Footer>
             <Button width={128} mr={20}>Cencel</Button>
             <Button width={128} type={'primary'}>Submit</Button>

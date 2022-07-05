@@ -1,5 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Container = styled.div`
+export const ImgWrapper = styled.div`
+	margin: 0 auto;
 
+	img {
+		width: 100%;
+	}
 `;
