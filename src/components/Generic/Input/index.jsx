@@ -16,10 +16,11 @@ const Input = ({
     onClick,
     placeholder,
     type,
-    isIcon
+    isIcon,
+    className,
 }) => {
     return (
-        <Wrapper>
+        <Wrapper isIcon={isIcon}>
             {isIcon  ? <Houses/> : ''}
             <Container 
                 width={width}
@@ -38,6 +39,7 @@ const Input = ({
                 placeholder={placeholder}
                 type={type}
                 isIcon={isIcon}
+                className={className}
             />
         </Wrapper>
     )

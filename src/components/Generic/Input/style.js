@@ -16,7 +16,7 @@ const getType = (type) => {
 }
 export const Wrapper = styled.div`
 	position: relative;
-	flex: 1;
+	flex: ${({isIcon}) => isIcon ? 1 : 0};
 `;
 
 export const Container = styled.input`	

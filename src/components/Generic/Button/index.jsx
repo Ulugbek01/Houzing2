@@ -21,6 +21,7 @@ const Button = ({
                 mb={mb}
                 ml={ml}
                 onClick={onClick}
+                className="nocopy"
                 >
             {children}
         </Container>
