@@ -18,7 +18,7 @@ const getType = (type) => {
 			return {
 				background: '#fff',
 				color: '#0D263B',
-				border: '1px solid #E6E9EC'
+				border: '1px solid #E6E9EC',
 			}
         default:
             return {
@@ -30,8 +30,11 @@ const getType = (type) => {
 }
 
 export const Container = styled.button`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: ${({width}) => width ? `${width}px`: '100%'};
-	height: ${({height}) => height ? `${height}px`: '100%'};
+	height: ${({height}) => height ? `${height}px`: '44px'};
 	margin-top: ${({mt}) => mt ? `${mt}px` : ''};
 	margin-right: ${({mr}) => mr ? `${mr}px` : ''};
 	margin-bottom: ${({mb}) => mb ? `${mb}px` : ''};
@@ -40,12 +43,12 @@ export const Container = styled.button`
 	border-radius: 2px;
 	font-size: 14px;
 	line-height: 20px;
-	transform: scale(1.01);
 	outline: none;
 	cursor: pointer;
 	
 	${({type}) => getType(type)}
+	
 	&:active {
-		transform: scale(1);
+		transform: scale(1.01);
 	}
 `;

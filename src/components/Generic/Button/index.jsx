@@ -9,19 +9,19 @@ const Button = ({
     mb,
     ml,
     onClick,
-    children
+    children,
 }) => {
     return (
-        <Container 
-            width={width}
-            height={height}
-            type={type}
-            mt={mt}
-            mr={mr}
-            mb={mb}
-            ml={ml}
-            onClick={onClick}
-        >
+            <Container 
+                width={width}
+                height={height}
+                type={type}
+                mt={mt}
+                mr={mr}
+                mb={mb}
+                ml={ml}
+                onClick={onClick}
+                >
             {children}
         </Container>
     )

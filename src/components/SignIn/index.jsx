@@ -12,13 +12,13 @@ const SignIn = () => {
             <RememberWrapper>
                 <RememberWrapper.Box>
                     <CheckBox id="checkbox" mr={10}/>
-                    <label for="checkbox">
+                    <label htmlFor="checkbox">
                         Remember me
                     </label>
                 </RememberWrapper.Box>
                 <p className="forgot">Forgot</p>
             </RememberWrapper>
-            <Button type={'primary'} height={44} mb={24}>Login</Button>
+            <Button type={'primary'} mb={24}>Login</Button>
         </Container>
     )
 }

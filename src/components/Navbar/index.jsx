@@ -16,7 +16,7 @@ const Navbar = () => {
                     <NavLink key={id} to={path} style={activeStyle}>{title}</NavLink>
                     )}
                 </NavbarWrapper.NavItems>
-                <Button onClick={() => navigate('signin')} width={120} height={44} type={'secondary'}>Login</Button>
+                <Button onClick={() => navigate('signin')} width={120} type={'secondary'}>Login</Button>
             </Container>
         </NavbarWrapper>
     )
