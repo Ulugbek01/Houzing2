@@ -1,4 +1,5 @@
 import Filter from '../Filter';
+import Category from './Category';
 import ChooseUse from './ChooseUse';
 import HeroCarousel from './HeroCarousel';
 import Recommended from './Recommended';
@@ -11,6 +12,7 @@ const Home = () => {
 			<HeroCarousel />
 			<Recommended />
 			<ChooseUse />
+			<Category />
 		</Container>
 	);
 };

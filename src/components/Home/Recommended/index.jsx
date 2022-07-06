@@ -1,10 +1,12 @@
-import React from 'react';
-import { Section, Container, CardsWrapper } from './style';
+import React, { useRef } from 'react';
+import { Section, Container, CardsWrapper, IconWrapper } from './style';
 import apartment1 from '../../../assets/images/apartment1.jpg';
 import apartment2 from '../../../assets/images/apartment2.jpg';
 import apartment3 from '../../../assets/images/apartment3.jpg';
 import apartment4 from '../../../assets/images/apartment1.jpg';
 import apartment5 from '../../../assets/images/apartment2.jpg';
+import { ReactComponent as ArrowLeft } from '../../../assets/icons/left-arrow.svg';
+import { ReactComponent as ArrowRight } from '../../../assets/icons/right-arrow.svg';
 import AliceCarousel from 'react-alice-carousel';
 import Card from '../../Generic/Card';
 
@@ -43,6 +45,8 @@ const items = [
 ];
 
 const Recommended = () => {
+	const slider = useRef();
+
 	return (
 		<Section className='recommended'>
 			<Container>
@@ -56,13 +60,19 @@ const Recommended = () => {
 						mouseTracking
 						controlsStrategy='alternate'
 						responsive={responsive}
-						// autoPlay={true}
+						autoPlay={true}
 						infinite={true}
 						animationDuration={600}
+						ref={slider}
 					/>
 				</CardsWrapper>
 			</Container>
-			;
+			<IconWrapper position='left' onClick={() => slider.current.slidePrev()}>
+				<ArrowLeft />
+			</IconWrapper>
+			<IconWrapper onClick={() => slider.current.slideNext()}>
+				<ArrowRight />
+			</IconWrapper>
 		</Section>
 	);
 };
