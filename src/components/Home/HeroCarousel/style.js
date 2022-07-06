@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+import { ReactComponent as beds } from '../../../assets/icons/beds.svg';
+import { ReactComponent as bath } from '../../../assets/icons/bath.svg';
+import { ReactComponent as garage } from '../../../assets/icons/car.svg';
+import { ReactComponent as ruler } from '../../../assets/icons/ruler.svg';
 
 export const ImgWrapper = styled.div`
 	position: relative;
@@ -21,6 +25,7 @@ ImgWrapper.Overlay = styled.div`
 	height: 100%;
 	background: rgba(0, 0, 0, 0.65);
 	position: absolute;
+	text-align: center;
 	top: 0;
 	left: 0;
 `;
@@ -40,9 +45,31 @@ ImgWrapper.Overlay.Dscr = styled.p`
 ImgWrapper.Overlay.IconsWrapper = styled.div`
 	display: flex;
 	align-items: center;
+	justify-content: center;
 `;
 
-ImgWrapper.Overlay.IconItem = styled.div``;
+ImgWrapper.Overlay.IconItem = styled.div`
+	text-align: center;
+	&:not(:last-child) {
+		margin-right: 24px;
+	}
+
+	svg path {
+		fill: #fff;
+	}
+
+	.icon-name {
+		color: var(--text-white);
+	}
+`;
+
+export const Beds = styled(beds)``;
+
+export const Bath = styled(bath)``;
+
+export const Garage = styled(garage)``;
+
+export const Ruler = styled(ruler)``;
 
 ImgWrapper.Overlay.Price = styled.h3`
 	font-weight: 600;
