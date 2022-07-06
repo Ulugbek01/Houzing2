@@ -25,7 +25,25 @@ const HeroCarousel = () => {
 						<Prev />
 					</IconWrapper>
 					<img src={item.url} alt='img' />
-					<ImgWrapper.Overlay></ImgWrapper.Overlay>
+					<ImgWrapper.Overlay>
+						<ImgWrapper.Overlay.Title>
+							Skyper Pool Partment
+						</ImgWrapper.Overlay.Title>
+
+						<ImgWrapper.Overlay.Dscr>
+							112 Glenwood Ave Hyde Park, Boston, MA
+						</ImgWrapper.Overlay.Dscr>
+
+						<ImgWrapper.Overlay.IconsWrapper>
+							<ImgWrapper.Overlay.IconItem></ImgWrapper.Overlay.IconItem>
+							<ImgWrapper.Overlay.IconItem></ImgWrapper.Overlay.IconItem>
+							<ImgWrapper.Overlay.IconItem></ImgWrapper.Overlay.IconItem>
+							<ImgWrapper.Overlay.IconItem></ImgWrapper.Overlay.IconItem>
+						</ImgWrapper.Overlay.IconsWrapper>
+
+						<ImgWrapper.Overlay.Price>$5,250/mo</ImgWrapper.Overlay.Price>
+						<ImgWrapper.Overlay.Button>Read more</ImgWrapper.Overlay.Button>
+					</ImgWrapper.Overlay>
 					<IconWrapper
 						className='next-icon'
 						onClick={() => slider.current.next()}>

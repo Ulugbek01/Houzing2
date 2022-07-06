@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const ImgWrapper = styled.div`
 	position: relative;
-	margin: 0 auto;
 
 	.prev-icon {
 		position: absolute;
@@ -24,6 +23,47 @@ ImgWrapper.Overlay = styled.div`
 	position: absolute;
 	top: 0;
 	left: 0;
+`;
+
+ImgWrapper.Overlay.Title = styled.h1`
+	font-weight: 700;
+	font-size: 44px;
+	line-height: 48px;
+	letter-spacing: -0.02em;
+	color: var(--text-white);
+`;
+
+ImgWrapper.Overlay.Dscr = styled.p`
+	color: var(--text-white);
+`;
+
+ImgWrapper.Overlay.IconsWrapper = styled.div`
+	display: flex;
+	align-items: center;
+`;
+
+ImgWrapper.Overlay.IconItem = styled.div``;
+
+ImgWrapper.Overlay.Price = styled.h3`
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 36px;
+	letter-spacing: -0.02em;
+	color: var(--text-white);
+`;
+
+ImgWrapper.Overlay.Button = styled.button`
+	width: 180px;
+	height: 44px;
+	background: transparent;
+	color: var(--text-white);
+	border: 1px solid #ffffff;
+	border-radius: 2px;
+	cursor: pointer;
+
+	:active {
+		transform: scale(1.01);
+	}
 `;
 
 export const IconWrapper = styled.div`
