@@ -1,114 +1,129 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :root {
-  --width: 1200px;
+	--width: 1200px;
 
-  /* bg text color */
-  --primary-bg-color: #0D263B;
-  --secondary-bg-color: #F5F7FC;
+	/* bg text color */
+	--primary-bg-color: #0d263b;
+	--secondary-bg-color: #f5f7fc;
 
-  /* text color */
-  --primary-text-color: #0D263B;
-  --secondary-text-color: #696969;
-  --text-white: #fff;
+	/* text color */
+	--primary-text-color: #0d263b;
+	--secondary-text-color: #696969;
+	--text-white: #fff;
 }
 
 /* Fonts */
 @font-face {
-  font-family: 'Montserrat';
-  src: url('./fonts/Montserrat-Regular.woff2') format('woff2'),
-    url('./fonts/Montserrat-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Montserrat';
+	src: url('./fonts/Montserrat-Regular.woff2') format('woff2'),
+		url('./fonts/Montserrat-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('./fonts/Montserrat-SemiBold.woff2') format('woff2'),
-    url('./fonts/Montserrat-SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Montserrat';
+	src: url('./fonts/Montserrat-SemiBold.woff2') format('woff2'),
+		url('./fonts/Montserrat-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('./fonts/Montserrat-Medium.woff2') format('woff2'),
-    url('./fonts/Montserrat-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Montserrat';
+	src: url('./fonts/Montserrat-Medium.woff2') format('woff2'),
+		url('./fonts/Montserrat-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('./fonts/Montserrat-Bold.woff2') format('woff2'),
-    url('./fonts/Montserrat-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Montserrat';
+	src: url('./fonts/Montserrat-Bold.woff2') format('woff2'),
+		url('./fonts/Montserrat-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* Common styles */
 
 body {
-  font-family: "Montserrat", sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .to-uppercase {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .to-center {
-  text-align: center;
+	text-align: center;
 }
 
 .section-title {
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 36px;
-  text-align: center;
-  letter-spacing: -0.02em;
-  color: var(--primary-text-color);
-  margin-bottom: 8px;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 36px;
+	text-align: center;
+	letter-spacing: -0.02em;
+	color: var(--primary-text-color);
+	margin-bottom: 8px;
 }
 
 .section-dscr {
-  line-height: 24px;
-  color: var(--secondary-text-color);
+	line-height: 24px;
+	color: var(--secondary-text-color);
 }
 
 .filter-title {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--primary-text-color);
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--primary-text-color);
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 li {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 /* noCopy */
 .nocopy {
-  --webkit-touch-callout: none;
-  /* iOS Safari */
-  --webkit-user-select: none;
-  /* Safari */
-  --khtml-user-select: none;
-  /* Konqueror HTML */
-  --moz-user-select: none;
-  /* Old versions of Firefox */
-  --ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
+	--webkit-touch-callout: none; /* iOS Safari */
+	--webkit-user-select: none; /* Safari */
+	--khtml-user-select: none; /* Konqueror HTML */
+	--moz-user-select: none; /* Old versions of Firefox */
+	--ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
+}
+
+/* Popover styles */
+.ant-popover-inner-content {
+	padding: 0;
+}
+
+.sc-gKXOVf {
+	padding: 30px 30px 0 30px;
+}
+
+.sc-iBkjds,
+.sc-ftvSup {
+	padding: 0 30px;
+}
+
+.sc-iqcoie {
+	background: #f6f8f9;
+	border-radius: 0px 0px 5px 5px;
+	padding: 20px 30px;
 }
