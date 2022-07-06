@@ -11,7 +11,10 @@ const Card = ({ url, title, dscr }) => {
 	return (
 		<CardWrapper>
 			<CardWrapper.Img>
-				<CardWrapper.Button btnType={'primary'} className='to-uppercase'>
+				<CardWrapper.Button
+					btnType={'primary'}
+					position='left'
+					className='to-uppercase'>
 					Featured
 				</CardWrapper.Button>
 				<img src={url} alt='card-img' />

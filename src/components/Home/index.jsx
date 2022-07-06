@@ -1,5 +1,5 @@
 import Filter from '../Filter';
-import Card from '../Generic/Card';
+import ChooseUse from './ChooseUse';
 import HeroCarousel from './HeroCarousel';
 import Recommended from './Recommended';
 import { Container } from './style';
@@ -10,7 +10,7 @@ const Home = () => {
 			<Filter />
 			<HeroCarousel />
 			<Recommended />
-			<Card />
+			<ChooseUse />
 		</Container>
 	);
 };

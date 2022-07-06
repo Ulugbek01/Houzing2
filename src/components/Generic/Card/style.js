@@ -1,12 +1,32 @@
 import styled from 'styled-components';
 
+const getPosition = (position) => {
+	switch (position) {
+		case 'left':
+			return {
+				left: '20px',
+			};
+
+		default:
+			return {
+				right: '20px',
+			};
+	}
+};
+
 export const CardWrapper = styled.div`
 	width: ${({ width }) => (width ? `${width}px` : '380px')};
 	border: 1px solid #e6e9ec;
 	border-radius: 3px;
 `;
 
-CardWrapper.Img = styled.div``;
+CardWrapper.Img = styled.div`
+	position: relative;
+
+	img {
+		width: 100%;
+	}
+`;
 
 CardWrapper.Button = styled.button`
 	width: ${({ width }) => (width ? `${width}px` : '73px')};
@@ -20,6 +40,11 @@ CardWrapper.Button = styled.button`
 	border: none;
 	outline: none;
 	color: var(--text-white);
+
+	position: absolute;
+	top: 20px;
+
+	${({ position }) => getPosition(position)}
 `;
 
 CardWrapper.Title = styled.h3`
@@ -89,4 +114,5 @@ CardWrapper.Footer.Price = styled.div`
 
 CardWrapper.Footer.Icons = styled.div`
 	display: flex;
+	align-items: center;
 `;
