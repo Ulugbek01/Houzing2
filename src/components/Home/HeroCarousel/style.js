@@ -21,6 +21,9 @@ export const ImgWrapper = styled.div`
 `;
 
 ImgWrapper.Overlay = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.65);
@@ -36,10 +39,12 @@ ImgWrapper.Overlay.Title = styled.h1`
 	line-height: 48px;
 	letter-spacing: -0.02em;
 	color: var(--text-white);
+	margin-bottom: 0;
 `;
 
 ImgWrapper.Overlay.Dscr = styled.p`
 	color: var(--text-white);
+	margin: 8px 0 24px 0;
 `;
 
 ImgWrapper.Overlay.IconsWrapper = styled.div`
@@ -73,6 +78,7 @@ export const Ruler = styled(ruler)``;
 
 ImgWrapper.Overlay.Price = styled.h3`
 	font-weight: 600;
+	margin: 24px 0 48px 0;
 	font-size: 28px;
 	line-height: 36px;
 	letter-spacing: -0.02em;

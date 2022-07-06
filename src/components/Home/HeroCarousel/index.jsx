@@ -26,35 +26,37 @@ const HeroCarousel = () => {
 					</IconWrapper>
 					<img src={item.url} alt='img' />
 					<ImgWrapper.Overlay>
-						<ImgWrapper.Overlay.Title>
-							Skyper Pool Partment
-						</ImgWrapper.Overlay.Title>
+						<div>
+							<ImgWrapper.Overlay.Title>
+								Skyper Pool Partment
+							</ImgWrapper.Overlay.Title>
 
-						<ImgWrapper.Overlay.Dscr>
-							112 Glenwood Ave Hyde Park, Boston, MA
-						</ImgWrapper.Overlay.Dscr>
+							<ImgWrapper.Overlay.Dscr>
+								112 Glenwood Ave Hyde Park, Boston, MA
+							</ImgWrapper.Overlay.Dscr>
 
-						<ImgWrapper.Overlay.IconsWrapper>
-							<ImgWrapper.Overlay.IconItem>
-								<Beds />
-								<p className='icon-name'>4 beds</p>
-							</ImgWrapper.Overlay.IconItem>
-							<ImgWrapper.Overlay.IconItem>
-								<Bath />
-								<p className='icon-name'>5 Baths</p>
-							</ImgWrapper.Overlay.IconItem>
-							<ImgWrapper.Overlay.IconItem>
-								<Garage />
-								<p className='icon-name'>1 Garage</p>
-							</ImgWrapper.Overlay.IconItem>
-							<ImgWrapper.Overlay.IconItem>
-								<Ruler />
-								<p className='icon-name'>1200 Sq Ft</p>
-							</ImgWrapper.Overlay.IconItem>
-						</ImgWrapper.Overlay.IconsWrapper>
+							<ImgWrapper.Overlay.IconsWrapper>
+								<ImgWrapper.Overlay.IconItem>
+									<Beds />
+									<p className='icon-name'>4 beds</p>
+								</ImgWrapper.Overlay.IconItem>
+								<ImgWrapper.Overlay.IconItem>
+									<Bath />
+									<p className='icon-name'>5 Baths</p>
+								</ImgWrapper.Overlay.IconItem>
+								<ImgWrapper.Overlay.IconItem>
+									<Garage />
+									<p className='icon-name'>1 Garage</p>
+								</ImgWrapper.Overlay.IconItem>
+								<ImgWrapper.Overlay.IconItem>
+									<Ruler />
+									<p className='icon-name'>1200 Sq Ft</p>
+								</ImgWrapper.Overlay.IconItem>
+							</ImgWrapper.Overlay.IconsWrapper>
 
-						<ImgWrapper.Overlay.Price>$5,250/mo</ImgWrapper.Overlay.Price>
-						<ImgWrapper.Overlay.Button>Read more</ImgWrapper.Overlay.Button>
+							<ImgWrapper.Overlay.Price>$5,250/mo</ImgWrapper.Overlay.Price>
+							<ImgWrapper.Overlay.Button>Read more</ImgWrapper.Overlay.Button>
+						</div>
 					</ImgWrapper.Overlay>
 					<IconWrapper
 						className='next-icon'
