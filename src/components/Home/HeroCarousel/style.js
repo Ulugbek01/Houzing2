@@ -18,6 +18,12 @@ export const ImgWrapper = styled.div`
 		top: 50%;
 		right: 32px;
 	}
+
+	@media screen and (max-width: 576px){
+		.next-icon, .prev-icon {
+			display: none;
+		}
+	}
 `;
 
 ImgWrapper.Overlay = styled.div`
@@ -40,6 +46,12 @@ ImgWrapper.Overlay.Title = styled.h1`
 	letter-spacing: -0.02em;
 	color: var(--text-white);
 	margin-bottom: 0;
+
+	@media screen and (max-width: 576px){
+		font-size: 28px;
+		line-height: 36px;
+		letter-spacing: -0.02em;
+	} 
 `;
 
 ImgWrapper.Overlay.Dscr = styled.p`

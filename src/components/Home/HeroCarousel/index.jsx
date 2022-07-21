@@ -24,7 +24,7 @@ const HeroCarousel = () => {
 						onClick={() => slider.current.prev()}>
 						<Prev />
 					</IconWrapper>
-					<img src={item.url} alt='img' />
+					<img className='main-img' src={item.url} alt='img' />
 					<ImgWrapper.Overlay>
 						<div>
 							<ImgWrapper.Overlay.Title>

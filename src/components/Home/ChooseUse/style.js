@@ -18,12 +18,26 @@ export const ChooseUseItemsWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	@media screen and (max-width: 576px){
+		flex-direction: column;
+	}
 `;
 
 ChooseUseItemsWrapper.Item = styled.div`
 	text-align: center;
 	&:not(:last-child) {
 		margin-right: 70px;
+	}
+
+	@media screen and (max-width: 576px){
+		&:not(:last-child) {
+			margin-right: 0;
+		}
+
+		& {
+			padding: 0 44px;
+		}
 	}
 `;
 

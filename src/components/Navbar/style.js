@@ -14,7 +14,18 @@ export const Container = styled.div`
 	${FlexBox};
 	justify-content: space-between;
 	max-width: var(--width);
+	width: 100%;
 	margin: 0 auto;
+
+	@media screen and (max-width: 1200px){
+		width: 96%;
+	}
+
+	@media screen and (max-width: 576px){
+		.login {
+			display: none;
+		}	
+	}
 `;
 
 export const LogoWrapper = styled.div`
@@ -51,8 +62,19 @@ NavbarWrapper.NavItems = styled.div`
 		left: 0;
 		bottom: -2px;
 	}
+
+	@media screen and (max-width: 768px){
+		a:not(:last-child) {
+			margin-right: 24px;
+		}
+	}
+
+	@media screen and (max-width: 576px){
+		& {
+			display: none;
+		}
+	}
 `;
-// exsc
 
 export const activeStyle = ({ isActive }) => {
 	return {
