@@ -53,3 +53,4 @@ ChooseUseItemsWrapper.Item.Dscr = styled.p`
 	line-height: 24px;
 	color: var(--secondary-text-color);
 `;
+

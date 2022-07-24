@@ -28,7 +28,6 @@ export const CardsWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid red;
 `;
 
 export const IconWrapper = styled.div`

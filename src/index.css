@@ -127,3 +127,13 @@ li {
 	border-radius: 0px 0px 5px 5px;
 	padding: 20px 30px;
 }
+
+.alice-carousel__prev-btn-item,
+.alice-carousel__next-btn {
+	display: none;
+}
+
+.alice-carousel__stage-item {
+    padding-left: 10px;
+    padding-right: 10px;
+}

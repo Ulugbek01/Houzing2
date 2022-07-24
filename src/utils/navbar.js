@@ -1,4 +1,7 @@
 import Home from '../components/Home';
+import Properties from '../components/Properties';
+import Contacts from '../components/Contacts';
+
 export const navbar = [
     {
         id: 1,
@@ -12,7 +15,7 @@ export const navbar = [
         id: 2,
         title: "Properties",
         path: "/properties",
-        Element: <div/>,
+        Element: <Properties/>,
         hidden: false,
         private: false,
     },
@@ -20,7 +23,7 @@ export const navbar = [
         id: 3,
         title: "Contacts",
         path: "/contacts",
-        Element: <div/>,
+        Element: <Contacts/>,
         hidden: false,
         private: false,
     }
