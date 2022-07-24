@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import AliceCarousel from 'react-alice-carousel';
-import { CategoryItem, Container, Section } from './style';
+import { BtnWrapper, CategoryItem, Container, Section } from './style';
 import categoryimg1 from '../../../assets/images/category-img1.png';
 import categoryimg2 from '../../../assets/images/category-img2.png';
 import categoryimg3 from '../../../assets/images/category-img3.png';
 import categoryimg4 from '../../../assets/images/category-img4.png';
+import { ReactComponent as ArrowLeft } from '../../../assets/icons/left-arrow.svg';
+import { ReactComponent as ArrowRight } from '../../../assets/icons/right-arrow.svg';
 
 const responsive = {
 	0: { items: 1 },
@@ -35,8 +37,12 @@ const items = [
 ];
 
 const Category = () => {
+
+	const slider = useRef();
 	return (
 		<Section className='category'>
+			<BtnWrapper position='left' onClick={() => slider.current.slidePrev()}><ArrowLeft /></BtnWrapper>
+			<BtnWrapper onClick={ () => slider.current.slideNext()}><ArrowRight/></BtnWrapper>
 			<Container>
 				<h2 className='section-title'>Category</h2>
 				<p className='section-dscr to-center'>
@@ -51,6 +57,7 @@ const Category = () => {
 					controlsStrategy='alternate'
 					infinite={true}
 					animationDuration={600}
+					ref={slider}
 				/>
 			</Container>
 		</Section>

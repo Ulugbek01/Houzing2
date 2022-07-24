@@ -9,7 +9,7 @@ const Properties = () => {
   console.log(data);
   return (
         <div>
-           Proporties
+          Proporties
         </div>
     )
 }
