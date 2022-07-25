@@ -7,10 +7,10 @@ import { ReactComponent as Ruler } from '../../../assets/icons/ruler.svg';
 import { ReactComponent as Resize } from '../../../assets/icons/arrow-top-bottom.svg';
 import { ReactComponent as Heart } from '../../../assets/icons/heart.svg';
 
-const Card = ({ url, title, dscr }) => {
+const Card = ({ url, title, dscr, onClick }) => {
 	return (
-		<CardWrapper>
-			<CardWrapper.Img>
+		<CardWrapper >
+			<CardWrapper.Img onClick={onClick}>
 				<CardWrapper.Button
 					btnType={'primary'}
 					position='left'

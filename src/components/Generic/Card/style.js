@@ -21,10 +21,13 @@ export const CardWrapper = styled.div`
 `;
 
 CardWrapper.Img = styled.div`
+	height: 220px;
 	position: relative;
+	cursor: pointer;
 
 	img {
 		width: 100%;
+		height: 100%;
 	}
 `;
 
