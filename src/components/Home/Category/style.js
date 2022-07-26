@@ -21,6 +21,7 @@ export const Container = styled.div`
 `;
 
 export const CategoryItem = styled.div`
+position: relative;
 `;
 
 export const BtnWrapper = styled.div`
@@ -40,4 +41,14 @@ export const BtnWrapper = styled.div`
 	svg path {
 		fill: #0d263b;
 	}
+`;
+
+CategoryItem.Title = styled.h3`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 18px;
+	line-height: 28px;
+	color: #fff;
 `;

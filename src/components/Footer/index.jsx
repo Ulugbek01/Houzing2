@@ -69,7 +69,6 @@ export const Footer = () => {
         <MainFooter.Bottom>
             <Logo onClick={()=> navigate('/home')}>
               <Logo.Icon/>
-              <Logo.Title>Houzing</Logo.Title>
             </Logo>
             <MainFooter.Discription>Copyright © 2022 CreativeLayers. All Right Reserved.</MainFooter.Discription>
             <MainFooter.ArrowTopBtn onClick={() => navigate('/home')}><ArrowTop/></MainFooter.ArrowTopBtn>

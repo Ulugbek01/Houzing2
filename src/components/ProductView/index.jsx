@@ -9,7 +9,7 @@ const ProductView = () => {
     
     return (
         <div>
-            {data?.data.filter((item) => item.id == id.replace(':', '')).map((value) =>
+            {data?.data.filter((item) => item.id === id.replace(':', '')).map((value) =>
                 <div key={value.id}>{value.id}{value.address}</div>
             )}
         </div>

@@ -110,14 +110,6 @@ export const Logo = styled.div`
 
 Logo.Icon = styled(logoIcon)``;
 
-Logo.Title = styled.h3`
-  font-size: 20px;
-  font-weight: 500;
-  color: #fff;
-  margin: 0;
-  margin-left: 12px;
-`;
-
 MainFooter.Discription = styled.div`
   font-size: 14px;
   margin-left: auto;

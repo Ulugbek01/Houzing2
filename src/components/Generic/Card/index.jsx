@@ -1,5 +1,5 @@
-import React from 'react';
-import { CardWrapper } from './style';
+import React,{useState} from 'react';
+import { CardWrapper, IconWrapper } from './style';
 import { ReactComponent as Beds } from '../../../assets/icons/beds.svg';
 import { ReactComponent as Bath } from '../../../assets/icons/bath.svg';
 import { ReactComponent as Garage } from '../../../assets/icons/car.svg';
@@ -8,8 +8,14 @@ import { ReactComponent as Resize } from '../../../assets/icons/arrow-top-bottom
 import { ReactComponent as Heart } from '../../../assets/icons/heart.svg';
 
 const Card = ({ url, title, dscr, onClick }) => {
+	const [selected, setSelected] = useState(false);
+
+	const onSelect = () => {
+		setSelected(!selected);
+		console.log(selected);
+	}
 	return (
-		<CardWrapper >
+		<CardWrapper title={dscr}>
 			<CardWrapper.Img onClick={onClick}>
 				<CardWrapper.Button
 					btnType={'primary'}
@@ -53,12 +59,12 @@ const Card = ({ url, title, dscr, onClick }) => {
 				</CardWrapper.Footer.Price>
 
 				<CardWrapper.Footer.Icons>
-					<CardWrapper.IconWrapper>
+					<IconWrapper>
 						<Resize />
-					</CardWrapper.IconWrapper>
-					<CardWrapper.IconWrapper bg={true}>
+					</IconWrapper>
+					<IconWrapper onClick={() => onSelect()} selected={selected}>
 						<Heart />
-					</CardWrapper.IconWrapper>
+					</IconWrapper>
 				</CardWrapper.Footer.Icons>
 			</CardWrapper.Footer>
 		</CardWrapper>

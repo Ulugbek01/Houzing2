@@ -18,6 +18,12 @@ export const CardWrapper = styled.div`
 	width: ${({ width }) => (width ? `${width}px` : '380px')};
 	border: 1px solid #e6e9ec;
 	border-radius: 3px;
+	transition: all 0.37s linear;
+
+	&:hover {
+		transform: scale(1.01);
+		box-shadow: rgb(0 0 0 / 16%) 0px 10px 36px 0px, rgb(0 0 0 / 6%) 0px 0px 0px 1px;
+	}
 `;
 
 CardWrapper.Img = styled.div`
@@ -84,17 +90,22 @@ CardWrapper.Footer = styled.div`
 	border-top: 1px solid #e6e9ec;
 `;
 
-CardWrapper.IconWrapper = styled.div`
+export const IconWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 35px;
 	height: 35px;
-	background: ${({ bg }) => (bg ? '#f6f8f9' : '#fff')};
+	background: ${({ selected }) => (selected ? '#CC5040' : '#f6f8f9')};
 	border-radius: 50%;
+	cursor: pointer;
 
 	&:not(:last-child) {
 		margin-right: 10px;
+	}
+
+	svg path {
+		fill: ${({ selected }) => (selected ? '#fff' : '#696969')};
 	}
 `;
 

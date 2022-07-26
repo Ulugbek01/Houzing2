@@ -1,10 +1,8 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import AliceCarousel from 'react-alice-carousel';
-import { BtnWrapper, CategoryItem, Container, Section } from './style';
-import categoryimg1 from '../../../assets/images/category-img1.png';
-import categoryimg2 from '../../../assets/images/category-img2.png';
-import categoryimg3 from '../../../assets/images/category-img3.png';
-import categoryimg4 from '../../../assets/images/category-img4.png';
+import { useQuery } from 'react-query';
+import { BtnWrapper, Container, Section } from './style';
+import Card from './Card';
 import { ReactComponent as ArrowLeft } from '../../../assets/icons/left-arrow.svg';
 import { ReactComponent as ArrowRight } from '../../../assets/icons/right-arrow.svg';
 
@@ -15,30 +13,24 @@ const responsive = {
 	1200: { items: 4 },
 };
 
-const items = [
-	<CategoryItem>
-		<img src={categoryimg1} alt="category-img" />
-	</CategoryItem>,
-	<CategoryItem>
-		<img src={categoryimg2} alt="category-img" />
-	</CategoryItem>,
-	<CategoryItem>
-		<img src={categoryimg3} alt="category-img" />
-	</CategoryItem>,
-	<CategoryItem>
-		<img src={categoryimg4} alt="category-img" />
-	</CategoryItem>,
-	<CategoryItem>
-		<img src={categoryimg1} alt="category-img" />
-	</CategoryItem>,
-	<CategoryItem>
-		<img src={categoryimg3} alt="category-img" />
-	</CategoryItem>,
-];
 
 const Category = () => {
-
+	const [list, setList] = useState([]);
 	const slider = useRef();
+
+	useQuery('list', () => {return fetch('https://houzing-app.herokuapp.com/api/v1/categories/list').then((res) => res.json())}, 
+	{
+		onSuccess: (res) => {
+			let categories = res?.data.map((item) => { 
+				return <Card key={item.id} title={item.name}/>
+			}
+			)		
+			setList(categories);
+		}
+	}
+	)
+	console.log(list);
+
 	return (
 		<Section className='category'>
 			<BtnWrapper position='left' onClick={() => slider.current.slidePrev()}><ArrowLeft /></BtnWrapper>
@@ -50,12 +42,12 @@ const Category = () => {
 				</p>
 
 				<AliceCarousel 
+					items={list}
 					responsive={responsive}
-					items={items}
 					mouseTracking={true}
 					autoPlay={true}
 					controlsStrategy='alternate'
-					infinite={true}
+					// infinite={true}
 					animationDuration={600}
 					ref={slider}
 				/>
