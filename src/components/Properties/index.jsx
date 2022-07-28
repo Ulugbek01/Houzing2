@@ -9,9 +9,9 @@ import Footer from '../Footer';
 
 const Properties = () => {
   const navigate = useNavigate();
-
-  const {data, isLoading} = useQuery('list', () => { return fetch(`https://houzing-app.herokuapp.com/api/v1/houses/list`).then((res) => res.json())});
-  // console.log(data);
+  const {data, isLoading} = useQuery('list', () => { return fetch('https://houzing-app.herokuapp.com/api/v1/houses/list').then((res) => res.json())});
+  console.log(data);
+  
   return (
         <>
           <Container>
@@ -19,7 +19,7 @@ const Properties = () => {
           <p className='section-dscr to-center'>Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</p>
           <div>length: {isLoading ? 0 : data?.data.length}</div>  
             <CardsWrapper>    
-              {data?.data.map((item) => 
+              {data?.data?.map((item) => 
                 <Card key={item.id} url={item.attachments[0].imgPath} title={item.name} dscr={item.description} onClick={() => navigate(`/properties/:${item.id}`)}/>
               )}
           </CardsWrapper>

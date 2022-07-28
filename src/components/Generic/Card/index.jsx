@@ -12,7 +12,6 @@ const Card = ({ url, title, dscr, onClick }) => {
 
 	const onSelect = () => {
 		setSelected(!selected);
-		console.log(selected);
 	}
 	return (
 		<CardWrapper title={dscr}>

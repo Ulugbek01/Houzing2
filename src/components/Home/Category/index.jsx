@@ -1,8 +1,9 @@
 import React, {useRef, useState} from 'react';
-import AliceCarousel from 'react-alice-carousel';
+import { useNavigate } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import { BtnWrapper, Container, Section } from './style';
+import AliceCarousel from 'react-alice-carousel';
 import Card from './Card';
+import { BtnWrapper, Container, Section } from './style';
 import { ReactComponent as ArrowLeft } from '../../../assets/icons/left-arrow.svg';
 import { ReactComponent as ArrowRight } from '../../../assets/icons/right-arrow.svg';
 
@@ -17,19 +18,20 @@ const responsive = {
 const Category = () => {
 	const [list, setList] = useState([]);
 	const slider = useRef();
+	const navigate = useNavigate();
 
 	useQuery('list', () => {return fetch('https://houzing-app.herokuapp.com/api/v1/categories/list').then((res) => res.json())}, 
 	{
 		onSuccess: (res) => {
 			let categories = res?.data.map((item) => { 
-				return <Card key={item.id} title={item.name}/>
+				return <Card key={item.id} title={item.name} onClick={() => navigate(`/properties?category_id=${item.id}`)}/>
 			}
 			)		
 			setList(categories);
 		}
 	}
 	)
-	console.log(list);
+	// console.log(list);
 
 	return (
 		<Section className='category'>
@@ -47,8 +49,7 @@ const Category = () => {
 					mouseTracking={true}
 					autoPlay={true}
 					controlsStrategy='alternate'
-					// infinite={true}
-					animationDuration={600}
+ 					animationDuration={600}
 					ref={slider}
 				/>
 			</Container>
