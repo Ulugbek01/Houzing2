@@ -9,6 +9,7 @@ const flexBox = css`
 export const Container = styled.div`
   max-width: 1180px;
   margin: 0 auto;
+
 `;
 
 export const Hero = styled.div``;
@@ -46,10 +47,19 @@ Hero.Title = styled.h2`
 `;
 
 Hero.Info.Header = styled.div`
-  ${flexBox};
-  justify-content: space-between;
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+padding: 20px 0;
   .text {
     color: #696969;
+  }
+
+  .description {
+    margin-top: 48px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #0D263B;
   }
 `;
 
@@ -142,5 +152,32 @@ AsideCard.User = styled.div`
   }
   .tel {
     color: #696969;
+  }
+`;
+
+export const SectionWrapper = styled.div`
+    max-width: 880px;
+    
+.location-title, .details-title {
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #0D263B;
+}
+
+  .location-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .details-title {
+    margin-top: 48px;
+  }
+
+  .details-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
