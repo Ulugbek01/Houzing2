@@ -1,4 +1,6 @@
 import React, { useRef } from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import Card from '../../Generic/Card';
 import { Section, Container, CardsWrapper, IconWrapper } from './style';
 import apartment1 from '../../../assets/images/apartment1.jpg';
 import apartment2 from '../../../assets/images/apartment2.jpg';
@@ -7,8 +9,6 @@ import apartment4 from '../../../assets/images/apartment1.jpg';
 import apartment5 from '../../../assets/images/apartment2.jpg';
 import { ReactComponent as ArrowLeft } from '../../../assets/icons/left-arrow.svg';
 import { ReactComponent as ArrowRight } from '../../../assets/icons/right-arrow.svg';
-import AliceCarousel from 'react-alice-carousel';
-import Card from '../../Generic/Card';
 
 const responsive = {
 	0: { items: 1 },
