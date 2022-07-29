@@ -177,7 +177,6 @@ export const SectionWrapper = styled.div`
 
   .details-wrapper {
     display: flex;
-    align-items: center;
     justify-content: space-between;
   }
 `;

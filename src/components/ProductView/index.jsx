@@ -75,7 +75,7 @@ const ProductView = () => {
                                         </Hero.Info.IconWrapper>
                                         <div>
                                             <h3 className='description'>Description</h3>
-                                            <p>lorem</p>
+                                            <p style={{maxWidth: '600px'}}>Occupying over 8,000 square feet, perched over 1,100 feet in the air with breathtaking panoramic 360-degree views of all of New York City and the surrounding tri-state area, The 82nd Floor at 432 Park Avenue has been completely reimagined by one of the most sought-after design houses in London and represents an utterly unique opportunity to own a grobally significant property.</p>
                                         </div>
                                     </div>
                                     <div>
@@ -94,6 +94,7 @@ const ProductView = () => {
                                             <p className='text'>Est. Mortgage</p>
                                         </Hero.Info.Header.Price>
                                     </div>
+
                                     <AsideCard>
                                         <AsideCard.User>
                                             <img className='user-img' src={user} alt="user" />
@@ -137,17 +138,11 @@ const ProductView = () => {
                             zoom={4}
                             center={{lat: 41.311081, lng: 69.240562}}
                             >
-                            <Marker position={{ lat: 41.311081, lng:  69.240562 }} />
                             <Marker position={{ lat: 40.12341, lng:  67.82842 }} />
-                            <Marker position={{ lat: 39.652451, lng:  66.970139 }} />
-                            <Marker position={{ lat: 40.78206, lng: 72.34424 }} />
-                            <Marker position={{ lat: 41.55175, lng: 60.63146 }} />
                             <Marker position={{ lat: 38.86056, lng: 65.78905 }} />
-                            <Marker position={{ lat: 40.103922, lng: 65.368833 }} />
                             <Marker position={{ lat: 40.52861, lng: 70.9425 }} />
                             <Marker position={{ lat: 41.005773, lng: 71.643603 }} />
                             <Marker position={{ lat: 39.75, lng:  67.8333 }} />
-                            <Marker position={{ lat: 42.1007, lng: 63.62852 }} />
                         </GoogleMap>
                         
                     </SectionWrapper>
