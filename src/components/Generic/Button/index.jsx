@@ -1,3 +1,4 @@
+import React from "react";
 import { Container } from "./style";
 
 const Button = ({
@@ -10,7 +11,8 @@ const Button = ({
     ml,
     onClick,
     children,
-    className
+    className,
+    mAuto
 }) => {
     return (
             <Container 
@@ -23,6 +25,7 @@ const Button = ({
                 ml={ml}
                 onClick={onClick}
                 className={`${className} nocopy`}
+                mAuto={mAuto}
                 >
             {children}
         </Container>
