@@ -11,7 +11,7 @@ const getPosition = (value) => {
 
 
 export const Section = styled.section`
-	padding: 96px 0;
+	padding: 24px 0 96px;
 	position: relative;
 `;
 

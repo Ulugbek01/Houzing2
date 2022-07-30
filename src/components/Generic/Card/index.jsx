@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{ useState } from 'react';
 import { CardWrapper, IconWrapper } from './style';
 import { ReactComponent as Beds } from '../../../assets/icons/beds.svg';
 import { ReactComponent as Bath } from '../../../assets/icons/bath.svg';
@@ -31,7 +31,7 @@ const Card = ({ url, title, dscr, onClick }) => {
 			<CardWrapper.Info>
 				<CardWrapper.Title>{title}</CardWrapper.Title>
 				<CardWrapper.Dscr>{dscr}</CardWrapper.Dscr>
-				<CardWrapper.IconsWrappper>
+				<CardWrapper.IconsWrapper>
 					<CardWrapper.IconItem>
 						<Beds />
 						<p className='icon-name'>4 Beds</p>
@@ -48,7 +48,7 @@ const Card = ({ url, title, dscr, onClick }) => {
 						<Ruler />
 						<p className='icon-name'>1200 Sq Ft</p>
 					</CardWrapper.IconItem>
-				</CardWrapper.IconsWrappper>
+				</CardWrapper.IconsWrapper>
 			</CardWrapper.Info>
 
 			<CardWrapper.Footer>

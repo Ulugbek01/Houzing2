@@ -14,6 +14,7 @@ const Input = ({
     pb,
     pl,
     onClick,
+    onChange,
     placeholder,
     type,
     isIcon,
@@ -36,6 +37,7 @@ const Input = ({
                 px={px}
                 py={py}
                 onClick={onClick}
+                onChange={onChange}
                 placeholder={placeholder}
                 type={type}
                 isIcon={isIcon}

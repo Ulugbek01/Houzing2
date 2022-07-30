@@ -27,12 +27,11 @@ const Testimonials = () => {
             <h2 className="section-title">Testimonials</h2>
             <p className="section-disc to-center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</p>
             
-            <CarouselWrapper>
+            <CarouselWrapper className="carousel-wrapper">
                 <AliceCarousel 
                     items={items}
                     mouseTracking
                     responsive={responsive}
-                    infinite={true}
                     autoPlay={true}
                     controlsStrategy="alternate"
                     ref={ref}

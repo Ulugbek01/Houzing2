@@ -11,7 +11,7 @@ const Root = () => {
         <Navbar/>
          <Routes>
             {navbar.map(({id, path, Element}) => 
-                <Route key={id} path={path} element={Element}/>
+               <Route key={id} path={path} element={Element}/>
             )}
 
             <Route path='/' element={<Home/>}/>

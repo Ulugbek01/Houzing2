@@ -8,7 +8,7 @@ export const navbar = [
         title: "Home",
         path: "/home",
         Element: <Home/>,
-        hidden: false,
+        hidden: true,
         private: false,
     },
     {
@@ -16,7 +16,7 @@ export const navbar = [
         title: "Properties",
         path: "/properties",
         Element: <Properties/>,
-        hidden: false,
+        hidden: true,
         private: false,
     },
     {
@@ -24,7 +24,7 @@ export const navbar = [
         title: "Contacts",
         path: "/contacts",
         Element: <Contacts/>,
-        hidden: false,
+        hidden: true,
         private: false,
     }
 ]

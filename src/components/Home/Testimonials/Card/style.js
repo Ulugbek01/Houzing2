@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
     width: 380px;
     text-align: center;
+    padding: 40px 48px 0;
+    font-size: 16px;
 
 
     .name {
@@ -15,4 +17,5 @@ export const CardContainer = styled.div`
         color: var(--secondary-text-color);
     }
 `;
+
 

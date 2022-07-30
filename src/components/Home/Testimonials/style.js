@@ -4,23 +4,27 @@ const getPosition = (value) => {
     switch (value) {
         case 'left':
             return {
-                left: 0,
+                left: '-50px',
             }
     
         default:
             return {
-                right: 0,
+                right: '-50px',
             }
     }
 }
 
 export const Container = styled.div`
-    position: relative;
+   max-width: var(--width);
+   width: 100%;
+   margin: 0 auto;
+   position: relative;
 
 `;
 
 
 export const CarouselWrapper = styled.div`
+margin-top: 32px;
 `;
 
 export const IconWrapper = styled.div`

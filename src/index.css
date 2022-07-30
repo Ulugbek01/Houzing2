@@ -138,6 +138,20 @@ li {
     padding-right: 10px;
 }
 
+.carousel-wrapper .alice-carousel__stage-item {
+	width: 400px;
+}
+
+.product-container .iCpnaV{
+	margin-top: 0;
+}
+
+.product-container .dEUmvg {
+	padding-top: 48px;
+}
+
+/* Scroll styles */
+
 ::-webkit-scrollbar {
 	width: 10px;
   }

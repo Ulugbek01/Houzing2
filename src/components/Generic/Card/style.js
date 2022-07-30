@@ -68,7 +68,7 @@ CardWrapper.Dscr = styled.p`
 	color: var(--secondary-text-color);
 `;
 
-CardWrapper.IconsWrappper = styled.div`
+CardWrapper.IconsWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

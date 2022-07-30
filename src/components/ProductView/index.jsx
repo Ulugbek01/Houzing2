@@ -18,6 +18,7 @@ import product3 from '../../assets/images/product3.png'
 import product4 from '../../assets/images/product4.png'
 import product5 from '../../assets/images/product5.png'
 import Footer from '../Footer';
+import Recommended from '../Home/Recommended';
 
 const key = 'AIzaSyAtToixyNzdDkQtU5fa0XFqfsBu3NrKXeA';
 
@@ -38,7 +39,7 @@ const ProductView = () => {
     console.log(data);
     
     return (
-        <div>
+        <div className='product-container'>
             {data?.filter((item) => item.id == id.replace(':', '')).map((value) =>
                 <Container key={value.id}>
                     <Hero>
@@ -168,6 +169,7 @@ const ProductView = () => {
                     </SectionWrapper>
                 </Container>
             )}
+            <Recommended/>
             <Footer/>
         </div>
     )

@@ -61,7 +61,6 @@ const Recommended = () => {
 						controlsStrategy='alternate'
 						responsive={responsive}
 						autoPlay={true}
-						infinite={true}
 						animationDuration={600}
 						ref={slider}
 					/>
