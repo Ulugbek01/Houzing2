@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Modal } from 'antd';
 import { CardWrapper, IconWrapper } from './style';
 import { ReactComponent as Beds } from '../../../assets/icons/beds.svg';
 import { ReactComponent as Bath } from '../../../assets/icons/bath.svg';
@@ -8,16 +8,19 @@ import { ReactComponent as Ruler } from '../../../assets/icons/ruler.svg';
 import { ReactComponent as Resize } from '../../../assets/icons/arrow-top-bottom.svg';
 import { ReactComponent as Heart } from '../../../assets/icons/heart.svg';
 import noImg  from '../../../assets/images/not_img.jpg';
+import ShowMore from './ShowMore';
 
-const Card = ({ item }) => {
+
+const Card = ({ item, onClick }) => {
 	const [selected, setSelected] = useState(false);
+	const [visible, setVisible] = useState(false);
 
 	const onSelect = () => {
 		setSelected(!selected);
 	}
 	return (
 		<CardWrapper>
-			<CardWrapper.Img>
+			<CardWrapper.Img onClick={onClick}>
 				<CardWrapper.Button
 					btnType={'primary'}
 					position='left'
@@ -53,6 +56,16 @@ const Card = ({ item }) => {
 				</CardWrapper.IconsWrapper>
 			</CardWrapper.Info>
 
+			<Modal
+				centered
+				visible={visible}
+				onOk={() => setVisible(false)}
+				onCancel={() => setVisible(false)}
+				width={'100%'}
+			>
+				<ShowMore item={item}/>
+      		</Modal>
+
 			<CardWrapper.Footer>
 				<CardWrapper.Footer.Price>
 					<p className='per-month'>${item?.price}/mo</p>
@@ -60,9 +73,10 @@ const Card = ({ item }) => {
 				</CardWrapper.Footer.Price>
 
 				<CardWrapper.Footer.Icons>
-					<IconWrapper>
+					<IconWrapper onClick={() => setVisible(true)}>
 						<Resize />
 					</IconWrapper>
+
 					<IconWrapper onClick={() => onSelect()} selected={selected}>
 						<Heart />
 					</IconWrapper>

@@ -37,9 +37,9 @@ const SignIn = () => {
         <Container className="nocopy">
             <Title>Sign in</Title>
             <form action="" method="post" onSubmit={formik.handleSubmit}>
-                <Input onChange={formik.handleChange} placeholder={'Login'} value={formik.values.login} name='login' id='login' mt={40} py={4}/>
+                <Input onChange={formik.handleChange} placeholder={'Login'} value={formik.values.login} name='login' mt={40} py={4}/>
                 <p style={{color: 'red'}}>{formik.errors.login}</p>
-                <Input onChange={formik.handleChange} value={formik.values.password} name='password' id='password' placeholder={'Password'} type={'password'} mt={40} mb={16} py={4}/>
+                <Input onChange={formik.handleChange} value={formik.values.password} name='password' placeholder={'Password'} type={'password'} mt={40} mb={16} py={4}/>
                 <RememberWrapper>
                     <RememberWrapper.Box>
                         <CheckBox id="checkbox" mr={10}/>
@@ -49,7 +49,7 @@ const SignIn = () => {
                     </RememberWrapper.Box>
                     <p className="forgot">Forgot</p>
                 </RememberWrapper>
-                <Button type='submit' typeBtn='primary' mb={24}>Login</Button>
+                <Button type={'primary'} mb={24}>Login</Button>
             </form>
         </Container>
     )
