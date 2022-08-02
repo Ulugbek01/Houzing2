@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Carousel } from 'antd';
 import apartment1 from '../../../assets/images/home-img.jpg';
 import apartment2 from '../../../assets/images/home-img.jpg';
 import apartment3 from '../../../assets/images/home-img.jpg';
 import { ReactComponent as Prev } from '../../../assets/icons/prev.svg';
 import { ReactComponent as Next } from '../../../assets/icons/next.svg';
-import { Bath, Beds, Garage, IconWrapper, ImgWrapper, Ruler } from './style';
+import { Bath, Beds, Garage, IconWrapper, ImgWrapper, Ruler, Button } from './style';
 
 const contents = [
 	{ id: 1, url: apartment1 },
@@ -14,6 +15,7 @@ const contents = [
 ];
 const HeroCarousel = () => {
 	const slider = useRef();
+	const navigate = useNavigate();
 
 	return (
 		<Carousel autoplay={true} ref={slider}>
@@ -55,7 +57,7 @@ const HeroCarousel = () => {
 							</ImgWrapper.Overlay.IconsWrapper>
 
 							<ImgWrapper.Overlay.Price>$5,250/mo</ImgWrapper.Overlay.Price>
-							<ImgWrapper.Overlay.Button>Read more</ImgWrapper.Overlay.Button>
+							<Button onClick={() => navigate('/properties')}>Read more</Button>
 						</div>
 					</ImgWrapper.Overlay>
 					<IconWrapper

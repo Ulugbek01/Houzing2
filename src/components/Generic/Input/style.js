@@ -5,7 +5,7 @@ const getType = (type) => {
 	switch (type) {
 		case 'primary':
 			return {
-				border: '1px solid #E6E9EC',
+				border: '1px solid #C8CACC',
 			}					
 		default:
 			return {

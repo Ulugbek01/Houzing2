@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {useQuery, useMutation } from 'react-query';
-import {useNavigate} from 'react-router-dom';
+import {useQuery} from 'react-query';
+import {useLocation, useNavigate} from 'react-router-dom';
 import { CardsWrapper, Container} from './style';
 import Card from '../Generic/Card';
 import Footer from '../Footer';
@@ -12,14 +12,16 @@ import Button from '../Generic/Button';
 const Properties = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
-  const {isLoading} = useQuery('list', () => { return fetch('https://houzing-app.herokuapp.com/api/v1/houses/list').then((res) => res.json())}, 
+  const { search } = useLocation();
+
+  const {isLoading} = useQuery(['list', search], () => { return fetch(`https://houzing-app.herokuapp.com/api/v1/houses/list${search}`).then((res) => res.json())}, 
     {
       onSuccess: (res) => {
-        setData(res?.data);
+        setData(res?.data || []);
       }
     },
   );
-  // console.log(data);
+  console.log(data);
   
   return (
         <>

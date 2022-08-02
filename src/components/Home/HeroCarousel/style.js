@@ -97,7 +97,7 @@ ImgWrapper.Overlay.Price = styled.h3`
 	color: var(--text-white);
 `;
 
-ImgWrapper.Overlay.Button = styled.button`
+export const Button = styled.button`
 	width: 180px;
 	height: 44px;
 	background: transparent;

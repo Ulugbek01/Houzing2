@@ -36,8 +36,8 @@ const ProductView = () => {
             setData(res?.data || []);
         }
     })
-    console.log(data);
-    
+    // console.log(data);
+
     return (
         <div className='product-container'>
             {data?.filter((item) => item.id == id.replace(':', '')).map((value) =>
