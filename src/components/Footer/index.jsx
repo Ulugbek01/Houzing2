@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Container, MainFooter, Logo} from './style';
 import {ReactComponent as Map} from '../../assets/icons/pin.svg';
@@ -12,6 +12,29 @@ import {ReactComponent as ArrowTop} from '../../assets/icons/arrow-top.svg';
 
 export const Footer = () => {
   const navigate = useNavigate();
+  const [visible, setVisible] = useState(false)
+  const [scroll, setScroll] = useState(0);
+
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 300){
+      setVisible(true)
+    } 
+    else if (scrolled <= 300){
+      setVisible(false)
+    }
+    setScroll(scrolled)
+  };
+
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+    });
+  };
+
+  window.addEventListener('scroll', toggleVisible);
+
   return (
     <MainFooter>
       <Container>
@@ -70,8 +93,8 @@ export const Footer = () => {
             <Logo onClick={()=> navigate('/home')}>
               <Logo.Icon/>
             </Logo>
-            <MainFooter.Discription>Copyright © 2022 CreativeLayers. All Right Reserved.</MainFooter.Discription>
-            <MainFooter.ArrowTopBtn onClick={() => navigate('/home')}><ArrowTop/></MainFooter.ArrowTopBtn>
+            <MainFooter.Description>Copyright © 2022 CreativeLayers. All Right Reserved.</MainFooter.Description>
+            <MainFooter.ArrowTopBtn onClick={scrollToTop} scroll={scroll}><ArrowTop/></MainFooter.ArrowTopBtn>
         </MainFooter.Bottom>
       </Container>
     </MainFooter>

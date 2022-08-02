@@ -108,9 +108,11 @@ export const Logo = styled.div`
   cursor: pointer;
 `;
 
-Logo.Icon = styled(logoIcon)``;
+Logo.Icon = styled(logoIcon)`
 
-MainFooter.Discription = styled.div`
+`;
+
+MainFooter.Description = styled.div`
   font-size: 14px;
   margin-left: auto;
   margin-right: 73px;
@@ -125,5 +127,19 @@ MainFooter.ArrowTopBtn = styled.div`
   background: #0061df;
   border-radius: 3px;
   cursor: pointer;
+  position: ${({scroll}) => scroll > 100 ? 'fixed' : 'static'};
+  right: 50px;
+  bottom: 15px;
+  z-index: 99;
+  animation: anim 0.3s alternate ease-in-out infinite;
+
+  @keyframes anim {
+    from {
+      transform: scale(0.9);
+    } 
+    to {
+      transform: scale(1);
+    }   
+  }
 `;
 
