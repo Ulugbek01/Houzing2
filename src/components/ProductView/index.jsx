@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import {GoogleMap, Marker, useJsApiLoader} from '@react-google-maps/api';
+
 import { AsideCard, Container, Hero, IconWrapper, SectionWrapper } from './style';
 import Input from '../Generic/Input';
 import Button from '../Generic/Button';
@@ -17,6 +18,8 @@ import product2 from '../../assets/images/product2.png'
 import product3 from '../../assets/images/product3.png'
 import product4 from '../../assets/images/product4.png'
 import product5 from '../../assets/images/product5.png'
+import noImg from '../../assets/images/not_img.jpg';
+
 import Footer from '../Footer';
 import Recommended from '../Home/Recommended';
 
@@ -40,12 +43,12 @@ const ProductView = () => {
 
     return (
         <div className='product-container'>
-            {data?.filter((item) => item.id == id.replace(':', '')).map((value) =>
+            {data?.filter((item) => item.id.toString() === id.replace(':', '')).map((value) =>
                 <Container key={value.id}>
                     <Hero>
                         <Hero.ImgWrapper>
                             <Hero.ImgWrapper.Left>
-                                <img src={value.attachments[0].imgPath} alt="product img" />
+                                <img src={value.attachments[0].imgPath || noImg} alt="product img" />
                             </Hero.ImgWrapper.Left>
                             <Hero.ImgWrapper.Right>
                                 <div>

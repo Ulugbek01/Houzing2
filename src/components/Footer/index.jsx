@@ -12,7 +12,7 @@ import {ReactComponent as ArrowTop} from '../../assets/icons/arrow-top.svg';
 
 export const Footer = () => {
   const navigate = useNavigate();
-  const [visible, setVisible] = useState(false)
+  const [, setVisible] = useState(false)
   const [scroll, setScroll] = useState(0);
 
   

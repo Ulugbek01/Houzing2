@@ -1,6 +1,6 @@
 import { CardWrapper, Title } from "./style";
 import cardImg from '../../../../assets/images/category-img1.png'
-import house from '../../../../assets/icons/house.svg';
+// import house from '../../../../assets/icons/house.svg';
 
 const Card = ({title, onClick}) => {
     return (

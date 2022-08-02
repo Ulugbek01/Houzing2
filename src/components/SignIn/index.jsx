@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useFormik } from "formik";
-import * as Yup from 'yup';
+// import * as Yup from 'yup';
 import Button from "../Generic/Button";
 import CheckBox from "../Generic/CheckBox";
 import Input from "../Generic/Input";
 import { Container, RememberWrapper, Title } from "./style";
 
 const SignIn = () => {
-    const [password, setPassword] = useState();
+    // const [password, setPassword] = useState();
 
     const formik = useFormik({
         initialValues: {
