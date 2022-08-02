@@ -20,7 +20,7 @@ const Input = ({
     isIcon,
     className,
     name,
-    id
+    value
 }) => {
     return (
         <Wrapper isIcon={isIcon}>
@@ -45,6 +45,7 @@ const Input = ({
                 isIcon={isIcon}
                 className={className}id
                 name={name}
+                value={value}
             />
         </Wrapper>
     )

@@ -7,5 +7,4 @@ export const useReplace = (query, value) => {
     }
     return url.search;
 }
-
 export default useReplace;
