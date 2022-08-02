@@ -23,7 +23,7 @@ import Recommended from '../Home/Recommended';
 const key = 'AIzaSyAtToixyNzdDkQtU5fa0XFqfsBu3NrKXeA';
 
 const ProductView = () => {
-    const {isLoaded} = useJsApiLoader({
+     useJsApiLoader({
         googleMapsApiKey: key,
         id: 'main'
     })
