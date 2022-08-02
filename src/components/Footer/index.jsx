@@ -15,6 +15,7 @@ export const Footer = () => {
   const [visible, setVisible] = useState(false)
   const [scroll, setScroll] = useState(0);
 
+  
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 300){
