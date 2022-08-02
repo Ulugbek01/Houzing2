@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useQuery} from 'react-query';
+import {useQuery, useMutation } from 'react-query';
 import {useNavigate} from 'react-router-dom';
 import { CardsWrapper, Container} from './style';
 import Card from '../Generic/Card';

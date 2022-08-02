@@ -38,6 +38,20 @@ CardWrapper.Img = styled.div`
 	}
 `;
 
+export const ProfileImg = styled.div`
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px rgba(13, 38, 59, 0.2);
+	position: absolute;
+	bottom: -20px;
+	right: 20px;
+
+	img {
+		width: 100%;
+	}
+`;
+
 CardWrapper.Button = styled.button`
 	width: ${({ width }) => (width ? `${width}px` : '73px')};
 	height: ${({ height }) => (height ? `${height}px` : '23px')};

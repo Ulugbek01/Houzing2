@@ -1,6 +1,6 @@
 import React,{ useState } from 'react';
 import { Modal } from 'antd';
-import { CardWrapper, IconWrapper } from './style';
+import { CardWrapper, IconWrapper, ProfileImg } from './style';
 import { ReactComponent as Beds } from '../../../assets/icons/beds.svg';
 import { ReactComponent as Bath } from '../../../assets/icons/bath.svg';
 import { ReactComponent as Garage } from '../../../assets/icons/car.svg';
@@ -8,6 +8,7 @@ import { ReactComponent as Ruler } from '../../../assets/icons/ruler.svg';
 import { ReactComponent as Resize } from '../../../assets/icons/arrow-top-bottom.svg';
 import { ReactComponent as Heart } from '../../../assets/icons/heart.svg';
 import noImg  from '../../../assets/images/not_img.jpg';
+import profileImg from '../../../assets/images/profile.png';
 import ShowMore from './ShowMore';
 
 
@@ -31,8 +32,13 @@ const Card = ({ item, onClick }) => {
 				<CardWrapper.Button className='to-uppercase'>
 					For sale
 				</CardWrapper.Button>
-			</CardWrapper.Img>
 
+				<ProfileImg>
+					<img src={item?.profileImg || profileImg} alt="profile img"/>
+				</ProfileImg>
+
+			</CardWrapper.Img>
+			
 			<CardWrapper.Info>
 				<CardWrapper.Title>{item?.name || 'No Title'}</CardWrapper.Title>
 				<CardWrapper.Dscr>{item?.description || 'No Description'}</CardWrapper.Dscr>
