@@ -20,7 +20,7 @@ const Card = ({ item, onClick }) => {
 		setSelected(!selected);
 	}
 	return (
-		<CardWrapper>
+		<CardWrapper className='card-wrapper'>
 			<CardWrapper.Img onClick={onClick}>
 				<CardWrapper.Button
 					btnType={'primary'}
@@ -67,7 +67,7 @@ const Card = ({ item, onClick }) => {
 				visible={visible}
 				onOk={() => setVisible(false)}
 				onCancel={() => setVisible(false)}
-				width={'100%'}
+				width={'52%'}
 			>
 				<ShowMore item={item}/>
       		</Modal>

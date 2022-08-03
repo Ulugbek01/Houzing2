@@ -18,7 +18,7 @@ const getType = (value) => {
 			return {
 				background: '#fff',
 				color: '#0D263B',
-				border: '1px solid #E6E9EC',
+				border: '1px solid #C8CACC',
 			}
         default:
             return {

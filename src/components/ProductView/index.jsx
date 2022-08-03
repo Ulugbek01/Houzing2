@@ -140,13 +140,9 @@ const ProductView = () => {
                                 height: '100vh',
                             }}
                             zoom={4}
-                            center={{lat: 41.311081, lng: 69.240562}}
+                            center={{lat: value?.location.latitude || 41.311081, lng: value?.location.longitude || 69.240562}}
                             >
-                            <Marker position={{ lat: 40.12341, lng:  67.82842 }} />
-                            <Marker position={{ lat: 38.86056, lng: 65.78905 }} />
-                            <Marker position={{ lat: 40.52861, lng: 70.9425 }} />
-                            <Marker position={{ lat: 41.005773, lng: 71.643603 }} />
-                            <Marker position={{ lat: 39.75, lng:  67.8333 }} />
+                            <Marker position={{ lat: value?.location.latitude || 41.311081, lng: value?.location.longitude || 69.240562}} />
                         </GoogleMap>
                         
                     </SectionWrapper>
