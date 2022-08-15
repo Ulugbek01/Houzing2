@@ -1,33 +1,50 @@
 import React, {useState} from 'react';
 import {useQuery} from 'react-query';
 import {useLocation, useNavigate} from 'react-router-dom';
-import { CardsWrapper, Container} from './style';
+import useSearch from '../../hooks/useSearch';
 import Card from '../Generic/Card';
 import Footer from '../Footer';
 import Filter from '../Filter';
 import Button from '../Generic/Button';
+import { CardsWrapper, Container} from './style';
 
-// const { REACT_APP_BASE_URL: url } = process.env;
+// const {REACT_APP_BASE_URL: url} = process.env;
 
 const Properties = () => {
+  const [title, setTitle] = useState('Properties')
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const { search } = useLocation();
+  const query = useSearch();
 
-  const {isLoading} = useQuery(['list', search], () => { return fetch(`https://houzing-app.herokuapp.com/api/v1/houses/list${search}`).then((res) => res.json())}, 
+  const {isLoading} = useQuery(['list', search], () => { return fetch(`https://houzing-app.herokuapp.com/api/v1/houses/list${search}`).then((res) => res.json())},
     {
       onSuccess: (res) => {
         setData(res?.data || []);
       }
     },
   );
-  console.log(data);
-  
+
+  useQuery(['categories'], 
+    () => {return query.get('category_id') && fetch(`https://houzing-app.herokuapp.com/api/v1/categories/${query.get('category_id')}`, 
+    {
+      method: 'get',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      }
+    }).then((res) => res.json())},
+      {
+        onSuccess: (res) => {
+          query.get('category_id') && setTitle(res?.data?.name)
+        }
+      }
+    )
+
   return (
         <>
           <Filter/>
           <Container>
-            <h2 className='section-title'>Properties</h2>
+            <h2 className='section-title'>{isLoading ? <h2>Loading...</h2> : title}</h2>
             <p className='section-dscr to-center'>Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</p>
             <div>length: {isLoading ? 0 : data?.length}</div>  
               <CardsWrapper>    
