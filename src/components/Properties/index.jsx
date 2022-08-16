@@ -8,16 +8,17 @@ import Filter from '../Filter';
 import Button from '../Generic/Button';
 import { CardsWrapper, Container} from './style';
 
-// const {REACT_APP_BASE_URL: url} = process.env;
 
 const Properties = () => {
+  const { REACT_APP_BASE_URL: url } = process.env;
+
   const [title, setTitle] = useState('Properties')
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const { search } = useLocation();
   const query = useSearch();
 
-  const {isLoading} = useQuery(['list', search], () => { return fetch(`https://houzing-app.herokuapp.com/api/v1/houses/list${search}`).then((res) => res.json())},
+  const {isLoading} = useQuery(['list', search], () => { return fetch(`${url}/v1/houses/list${search}`).then((res) => res.json())},
     {
       onSuccess: (res) => {
         setData(res?.data || []);
@@ -26,7 +27,7 @@ const Properties = () => {
   );
 
   useQuery(['categories'], 
-    () => {return query.get('category_id') && fetch(`https://houzing-app.herokuapp.com/api/v1/categories/${query.get('category_id')}`, 
+    () => {return query.get('category_id') && fetch(`${url}/v1/categories/${query.get('category_id')}`, 
     {
       method: 'get',
       headers: {
@@ -40,11 +41,12 @@ const Properties = () => {
       }
     )
 
+
   return (
         <>
           <Filter/>
           <Container>
-            <h2 className='section-title'>{isLoading ? <h2>Loading...</h2> : title}</h2>
+            <h2 className='section-title'>{isLoading ? <h2>Loading...</h2> : title.charAt(0).toUpperCase().concat(title.slice(1))}</h2>
             <p className='section-dscr to-center'>Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</p>
             <div>length: {isLoading ? 0 : data?.length}</div>  
               <CardsWrapper>    
