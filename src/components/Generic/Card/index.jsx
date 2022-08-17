@@ -20,8 +20,6 @@ const Card = ({ item, onClick }) => {
 		setSelected(!selected);
 	}
 
-	console.log(item?.attachments[0].imgPath);
-
 	return (
 		<CardWrapper className='card-wrapper'>
 			<CardWrapper.Img onClick={onClick}>

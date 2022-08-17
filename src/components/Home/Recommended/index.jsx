@@ -44,13 +44,13 @@ const items = [
 	/>,
 ];
 
-const Recommended = () => {
+const Recommended = ({title}) => {
 	const slider = useRef();
 
 	return (
 		<Section className='recommended'>
 			<Container>
-				<h2 className='section-title'>Recommended</h2>
+				<h2 className='section-title'>{title || 'Recommended'}</h2>
 				<p className='section-dscr to-center'>
 					Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
 				</p>

@@ -26,6 +26,8 @@ import Recommended from '../Home/Recommended';
 const key = 'AIzaSyAtToixyNzdDkQtU5fa0XFqfsBu3NrKXeA';
 
 const ProductView = () => {
+    const { REACT_APP_BASE_URL: url } = process.env;
+
      useJsApiLoader({
         googleMapsApiKey: key,
         id: 'main'
@@ -34,7 +36,8 @@ const ProductView = () => {
     const [data, setData] = useState([]);
     const {id} = useParams();
     
-    useQuery('list', ()=> {return fetch("https://houzing-app.herokuapp.com/api/v1/houses/list").then((res) => res.json())}, {
+    useQuery('list', async ()=> {const res = await fetch(`${url}/v1/houses/list`);
+    return await res.json();}, {
         onSuccess: (res)=> {
             setData(res?.data || []);
         }
@@ -140,9 +143,9 @@ const ProductView = () => {
                                 height: '100vh',
                             }}
                             zoom={4}
-                            center={{lat: value?.location.latitude || 41.311081, lng: value?.location.longitude || 69.240562}}
+                            center={{lat: value?.location?.latitude || 41.311081, lng: value?.location?.longitude || 69.240562}}
                             >
-                            <Marker position={{ lat: value?.location.latitude || 41.311081, lng: value?.location.longitude || 69.240562}} />
+                            <Marker position={{ lat: value?.location?.latitude || 41.311081, lng: value?.location?.longitude || 69.240562}} />
                         </GoogleMap>
                         
                     </SectionWrapper>
@@ -168,7 +171,7 @@ const ProductView = () => {
                     </SectionWrapper>
                 </Container>
             )}
-            <Recommended/>
+            <Recommended title='Similar listings'/>
             <Footer/>
         </div>
     )
