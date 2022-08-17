@@ -8,7 +8,6 @@ import Filter from '../Filter';
 import Button from '../Generic/Button';
 import { CardsWrapper, Container} from './style';
 
-
 const Properties = () => {
   const { REACT_APP_BASE_URL: url } = process.env;
 
@@ -54,7 +53,7 @@ const Properties = () => {
                   <Card key={item.id} item={item} onClick={() => navigate(`/properties/:${item.id}`)}/>
                 )}
             </CardsWrapper>
-            <Button type={'primary'} width="250" mAuto={'auto'}>Show more</Button>
+            <Button style={{margin: '10px auto'}} type={'primary'} width="250">Show more</Button>
           </Container>
           <Footer/>
         </>

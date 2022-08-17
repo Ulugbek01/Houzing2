@@ -55,7 +55,7 @@ const Filter = () => {
         <Container>
             <Input type={'primary'} pl={44} isIcon={true} placeholder={'Enter an address, neighborhood, city, or ZIP code'}/>
             <Popover placement="bottomRight" content={content} trigger="click"> 
-                <Button type={'light'} width={130} ml={20} mr={20}><FilterIcon/> Advanced</Button>
+                <Button type={'light'} width={130} ml={10} mr={10}><FilterIcon/> Advanced</Button>
             </Popover>
             <Button type={'primary'} width={180}><Search/> Search</Button>
         </Container>

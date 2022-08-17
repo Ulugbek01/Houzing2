@@ -12,7 +12,7 @@ const Button = ({
     onClick,
     children,
     className,
-    mAuto
+    style
 }) => {
     return (
             <Container 
@@ -25,7 +25,7 @@ const Button = ({
                 ml={ml}
                 onClick={onClick}
                 className={`${className} nocopy`}
-                mAuto={mAuto}
+                style={style}
                 >
             {children}
         </Container>

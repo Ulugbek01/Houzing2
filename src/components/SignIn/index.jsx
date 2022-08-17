@@ -39,12 +39,15 @@ const SignIn = () => {
                         else {
                             setError("Email yoki password xato")
                         }
+                    },
+                    onError: (err) => {
+                        setError(err && "Email yoki password xato");
                     }
                 }
             )
         }
         else {
-            setError("Email yoki password bo'sh bo'lmasligi kerak")
+            setError( "Email yoki password bo'sh bo'lmasligi kerak")
         }
     }
 

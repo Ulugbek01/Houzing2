@@ -39,7 +39,6 @@ export const Container = styled.button`
 	margin-right: ${({mr}) => mr ? `${mr}px` : ''};
 	margin-bottom: ${({mb}) => mb ? `${mb}px` : ''};
 	margin-left: ${({ml}) => ml ? `${ml}px` : ''};
-	margin: 0 ${({mAuto}) => mAuto && 'auto'};
 	font-family: 'Montserrat', sans-serif;
 	border-radius: 2px;
 	font-size: 14px;
