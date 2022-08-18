@@ -5,6 +5,17 @@ import Button from "../Generic/Button";
  
 const Navbar = () => {
     const navigate = useNavigate();
+
+    const goToLogin = () => {
+        navigate('signin');
+    }
+
+    const logOut = () => {
+        localStorage.removeItem('token');
+        navigate('/home');
+        window.location.reload();
+    }
+
     return (
         <NavbarWrapper>
             <Container>
@@ -16,7 +27,14 @@ const Navbar = () => {
                     <NavLink key={id} to={path} style={activeStyle}>{title}</NavLink>
                     )}
                 </NavbarWrapper.NavItems>
-                <Button onClick={() => navigate('signin')} width={120} type={'secondary'} className="login">Login</Button>
+                {localStorage.getItem('token') ? 
+                    <div style={{display: 'flex'}}>
+                        <Button onClick={() => navigate('/profile/properties')} width={120} type={'secondary'} className="login" mr={10}>Profile</Button>
+                        <Button onClick={logOut} width={120} type={'secondary'} className="login">Log Out</Button>
+                    </div>
+                :
+                    <Button onClick={ goToLogin } width={120} type={'secondary'} className="login">Login</Button>
+                }
             </Container>
         </NavbarWrapper>
     )

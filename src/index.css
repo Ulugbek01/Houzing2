@@ -60,6 +60,10 @@ body {
 	font-family: 'Montserrat', sans-serif;
 }
 
+.d-flex {
+	display: flex;
+}
+
 .to-uppercase {
 	text-transform: uppercase;
 }
@@ -76,6 +80,10 @@ body {
 	letter-spacing: -0.02em;
 	color: var(--primary-text-color);
 	margin-bottom: 8px;
+}
+
+.to-left {
+	text-align: left;
 }
 
 .section-dscr {
