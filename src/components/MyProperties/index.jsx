@@ -8,7 +8,7 @@ const MyProperties = () => {
     const { REACT_APP_BASE_URL: url } = process.env;
 
     useQuery('test', () => {
-       return fetch(`${url}/v1/houses/me`, {
+        return fetch(`${url}/v1/houses/me`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -36,3 +36,4 @@ const MyProperties = () => {
 }
 
 export default MyProperties;
+

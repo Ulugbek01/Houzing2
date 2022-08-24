@@ -1,10 +1,84 @@
 import React from "react";
+import { useMutation } from "react-query";
 import {ReactComponent as Edit} from '../../../assets/icons/edit.svg'
 import {ReactComponent as Delete} from '../../../assets/icons/delete.svg'
 import home from '../../../assets/images/product4.png'
 import {Button, Container, IconWrapper, Wrapper } from "./style";
 
 const ColumnCard = ({item}) => {
+    const {REACT_APP_BASE_URL: url} = process.env;
+    
+
+    const {mutate} = useMutation(() => {
+        return fetch(`${url}/v1/houses/776`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify({
+                    address: "string",
+                    attachments: [
+                      {
+                        imgPath: "https://www.shutterstock.com/search/house"
+                      }
+                    ],
+                    categoryId: 0,
+                    city: "string",
+                    componentsDto: {
+                      additional: "string",
+                      airCondition: true,
+                      courtyard: true,
+                      furniture: true,
+                      gasStove: true,
+                      internet: true,
+                      tv: true
+                    },
+                    country: "string",
+                    description: "string",
+                    homeAmenitiesDto: {
+                      additional: "string",
+                      busStop: true,
+                      garden: true,
+                      market: true,
+                      park: true,
+                      parking: true,
+                      school: true,
+                      stadium: true,
+                      subway: true,
+                      superMarket: true
+                    },
+                    houseDetails: {
+                      area: 0,
+                      bath: 0,
+                      beds: 0,
+                      garage: 0,
+                      room: 0,
+                      yearBuilt: 0
+                    },
+                    locations: {
+                      latitude: 0,
+                      longitude: 0
+                    },
+                    name: "string",
+                    price: 0,
+                    region: "string",
+                    salePrice: 0,
+                    status: true,
+                    zipCode: "string"
+            })
+
+        }).then((res) => res.json());        
+    })
+
+    const onDelete = (id) => {
+       mutate({}, {
+        onSuccess: (res) => {
+            console.log(res);
+        }
+       })
+    }
+
     return (
         <Container>
             <ul className="d-flex title-wrapper">
@@ -52,7 +126,7 @@ const ColumnCard = ({item}) => {
 
                 <div className="action d-flex">
                     <IconWrapper><Edit/></IconWrapper>
-                    <IconWrapper><Delete/></IconWrapper>
+                    <IconWrapper onClick={() => onDelete(item.id)}><Delete/></IconWrapper>
                 </div>
             </Wrapper>
         </Container>
